@@ -1,6 +1,6 @@
-<!-- include header -->
-<%- include('include/_header')%>
-<!-- /include header -->
+<div id="header">
+  <!-- carrega o header via jquery -->
+</div>
 <!--main-->
 <main id="site-main">
   <div class="container">
@@ -20,21 +20,21 @@
   <div class="new_user">
     <div class="form-group">
       <label for="name" class="text-light">Nome</label>
-      <input type="hidden" name="id" value="<%= user._id %>" />
-      <input type="text" name="name" value="<%= user.name %>" />
+      <input type="hidden" name="id" value="user._id" />
+      <input type="text" name="name" value="user.name" />
     </div>
     <div class="form-group">
       <label for="Email" class="text-light">Email</label>
-      <input type="text" name="email" value="<%= user.email %>" />
+      <input type="text" name="email" value="user.email" />
     </div>
     <div class="form-group">
       <label for="gender" class="text-light">Gênero</label>
       <div class="radio inline">
-        <input type="radio" id="radio-2" name="gender" value="Male" <%= user.gender == 'Male'? 'checked':'' %>>
+        <input type="radio" id="radio-2" name="gender" value="Male">
         <label for="radio-2" class="radio-label">Masculino</label>
       </div>
       <div class="radio inline">
-        <input type="radio" id="radio-3" name="gender" value="Female" <%= user.gender == 'Female'? 'checked':'' %>>
+        <input type="radio" id="radio-3" name="gender" value="Female">
         <label for="radio-3" class="radio-label">Feminino</label>
       </div>
     </div>
@@ -42,11 +42,11 @@
     <div class="form-group">
       <label for="gender" class="text-light">Status</label>
       <div class="radio inline">
-        <input type="radio" id="radio-4" name="status" value="Active" <%= user.status == 'Active'? 'checked':'' %>>
+        <input type="radio" id="radio-4" name="status" value="Active">
         <label for="radio-4" class="radio-label">Ativo</label>
       </div>
       <div class="radio inline">
-        <input type="radio" id="radio-5" name="status" value="Inactive" <%= user.status == 'Inactive'? 'checked':'' %>>
+        <input type="radio" id="radio-5" name="status" value="Inactive">
         <label for="radio-5" class="radio-label">Inativo</label>
       </div>
     </div>
@@ -58,7 +58,15 @@
 
 </main>
 <!--/main-->
-
-<!-- include footer -->
-<%- include('include/_footer')%>
-<!-- /include footer -->
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+  integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+  crossorigin="anonymous"
+></script>
+<script src="/js/index.js"></script>
+<script>
+  $(document).ready(function () {
+    $('#header').load('include/_header.html');
+   
+  });
+</script>

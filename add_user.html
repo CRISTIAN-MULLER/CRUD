@@ -1,0 +1,35 @@
+<div id="header">
+  <!-- carrega o header via jquery -->
+</div>
+<main id="site-main">
+  <div class="container">
+    <div class="box-nav d-flex-justify-between">
+      <div class="filter">
+        <a href="/"><i class="fa fa-angle-double-left"></i> Todos Usuários</a>
+      </div>
+    </div>
+    <div class="form-title text-center">
+      <h2 class="text-dark">Novo Usuário</h2>
+      <span class="text-light"
+        >Use o Formulário abaixo para adicionar um usuário.</span
+      >
+    </div>
+    <div id="form">
+      <!-- carrega o form via jquery -->
+    </div>
+  </div>
+</main>
+<!--/main-->
+
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+  integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+  crossorigin="anonymous"
+></script>
+<script src="/js/index.js"></script>
+<script>
+  $(document).ready(function () {
+    $('#header').load('include/_header.html');
+    $('#form').load('include/_form.html');
+  });
+</script>
