@@ -21,11 +21,11 @@
     <div class="form-group">
       <label for="name" class="text-light">Nome</label>
       <input type="hidden" name="id" value="user._id" />
-      <input type="text" name="name" value="user.name" />
+      <input type="text" name="name" id= "name" value="user.name" />
     </div>
     <div class="form-group">
       <label for="Email" class="text-light">Email</label>
-      <input type="text" name="email" value="user.email" />
+      <input type="text" name="email" id= "email"value="user.email" />
     </div>
     <div class="form-group">
       <label for="gender" class="text-light">Gênero</label>
@@ -63,10 +63,27 @@
   integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
   crossorigin="anonymous"
 ></script>
-<script src="/js/index.js"></script>
+
 <script>
   $(document).ready(function () {
-    $('#header').load('include/_header.html');
-   
+    $('#header').load('include/_header.html');   
+    var users = JSON.parse(localStorage.getItem('users'));
+    
+
+  var queryString = window.location.search;
+  var urlParams = new URLSearchParams(queryString);
+  var id = parseInt(urlParams.get('id'));
+  $('#name').val(users[id].name)
+  $('#email').val(users[id].email)
+  
+  if (users[id].gender === 'Male') {
+    $("#radio-2").prop("checked", true)
+  }else{
+    $("#radio-3").prop("checked", true)
+  }
+  if (users[id].status == 'Active') {
+    $("#radio-4").prop("checked", true)
+  }else{
+    $("#radio-5").prop("checked", true)}
   });
 </script>
